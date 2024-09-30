@@ -1,0 +1,31 @@
+{
+  "name": "Gmail AI",
+  "description": "A Chrome extension for AI in Gmail",
+  "version": "1.0.0",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "host_permissions": ["https://mail.google.com/*"],
+  "options_page": "../options.html",
+  "permissions": ["tabs", "sidePanel", "scripting"],
+  "action": {
+    "default_title": "Gmail AI"
+  },
+  "background": {
+    "service_worker": "background.ts"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://mail.google.com/*" ],
+      "js": ["content-scripts/content.tsx"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [{
+    "matches": ["https://mail.google.com/*"],
+    "resources": ["assets/*"]
+  }],
+  "manifest_version": 3
+}

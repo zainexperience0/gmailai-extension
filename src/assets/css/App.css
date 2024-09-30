@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* App.css */
+
+.animate-bubble {
+  animation: bubbleIn 0.4s ease-out forwards; /* Bubble in and out */
+}
+
+@keyframes bubbleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1); /* Slightly bigger for the bubble effect */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Normal size */
+  }
+}
+
+.bg-white {
+  background-color: white; /* Ensures the popup background is white */
+}
+
+.shadow-lg {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for the popup */
+}
+
+.transition-transform {
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.transition-colors {
+  transition: background-color 0.3s ease; /* Smooth transition for button colors */
+}
